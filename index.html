@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <title>score keeper</title>
+        <h1>score keeper!</h1>
+        <sub>display your scores in an easy way</sub>
+        <br>
+        <span id=scoresdisplay>
+        </span>
+        <div style="text-align: center; display: inline-block; border: solid black 2px;">
+            <input type="text" placeholder="next players name" id='pname'>
+            <br>
+            <button onclick="addscore()">+</button>
+            <p></p>
+            <button onclick="window.location.href=''">new game with <br>new players</button><button onclick="newgame()">new game with<br> same players</button>
+        </div>
+        <script>
+            var currentscores = 0
+            function addpoints(changeid){
+                document.getElementById(changeid).innerHTML = Number(document.getElementById(changeid).innerHTML) + 1
+            }
+            function takepoints(changeid){
+                document.getElementById(changeid).innerHTML = Number(document.getElementById(changeid).innerHTML) - 1
+            }
+            function addscore(){
+                currentscores += 1
+                document.getElementById("scoresdisplay").innerHTML += '<div style="float:left;text-align: center; width: 3cm; border: solid black 2px;">' + document.getElementById("pname").value + '<br><button onclick="addpoints('+ currentscores +')">^</button><br><p id="'+ currentscores +'">0</p><button onclick="takepoints('+ currentscores +')">v</button></div>'
+                document.getElementById("pname").value = ''
+            }
+            function newgame(){
+                var i = currentscores
+                while(i != 0){
+                    document.getElementById(String(i)).innerHTML = 0
+                    i -= 1
+                }
+            }
+        </script>
+    </body>
+</html>
