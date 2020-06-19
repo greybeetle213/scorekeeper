@@ -1,8 +1,6 @@
 <html>
     <body>
         <title>score keeper</title>
-        <h1>score keeper!</h1>
-        <sub>display your scores in an easy way</sub>
         <br>
         <span id=scoresdisplay>
         </span>
@@ -23,7 +21,7 @@
             }
             function addscore(){
                 currentscores += 1
-                document.getElementById("scoresdisplay").innerHTML += '<div style="float:left;text-align: center; width: 48%; height: 25%; border: solid black 2px;"><span style="font-size: 35px;">' + document.getElementById("pname").value + '</span><br><button onclick="addpoints('+ currentscores +')">^</button><br><p id="'+ currentscores +'" style="font-size: 35px;">0</p><button onclick="takepoints('+ currentscores +')">v</button></div>'
+                document.getElementById("scoresdisplay").innerHTML += '<div style="float:left;text-align: center; width: 48%; height: 25%; border: solid black 2px;"><span style="font-size: 35px;">' + document.getElementById("pname").value + '</span><br><button onclick="addpoints('+ currentscores +')" style="font-size: 35px;">^</button><br><p id="'+ currentscores +'" style="font-size: 35px;">0</p><button onclick="takepoints('+ currentscores +')" style="font-size: 35px;">v</button></div>'
                 document.getElementById("pname").value = ''
             }
             function newgame(){
