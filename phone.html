@@ -6,12 +6,12 @@
         <br>
         <span id=scoresdisplay>
         </span>
-        <div style="text-align: center; display: inline-block; border: solid black 2px;">
+        <div style="text-align: center; display: inline-block; border: solid black 2px; width: 50%; height: 25%;">
             <input type="text" placeholder="next players name" id='pname'>
             <br>
-            <button onclick="addscore()">+</button>
+            <button onclick="addscore()" style="font-size: larger;">+</button>
             <p></p>
-            <button onclick="window.location.href=''">new game with <br>new players</button><button onclick="newgame()">new game with<br> same players</button>
+            <button onclick="window.location.href=''" style="font-size: larger;">new game with <br>new players</button><button onclick="newgame()" style="font-size: larger;">new game with<br> same players</button>
         </div>
         <script>
             var currentscores = 0
@@ -23,7 +23,7 @@
             }
             function addscore(){
                 currentscores += 1
-                document.getElementById("scoresdisplay").innerHTML += '<div style="float:left;text-align: center; width: 3cm; border: solid black 2px;">' + document.getElementById("pname").value + '<br><button onclick="addpoints('+ currentscores +')">^</button><br><p id="'+ currentscores +'">0</p><button onclick="takepoints('+ currentscores +')">v</button></div>'
+                document.getElementById("scoresdisplay").innerHTML += '<div style="float:left;text-align: center; width: 48%; height: 25%; border: solid black 2px;"><span style="font-size: larger;">' + document.getElementById("pname").value + '</span><br><button onclick="addpoints('+ currentscores +')">^</button><br><p id="'+ currentscores +'" style="font-size: larger;">0</p><button onclick="takepoints('+ currentscores +')">v</button></div>'
                 document.getElementById("pname").value = ''
             }
             function newgame(){
@@ -35,6 +35,6 @@
             }
         </script>
     <br>
-    <span style="position: fixed; bottom: 0;">on a conputer? click here!</span> 
 </body>
 </html>
+
